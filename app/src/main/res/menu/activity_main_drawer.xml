@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_filtra_per_persona"
+            android:icon="@drawable/find_person"
+            android:title="@string/menu_cerca_per_persona"/>
+
+        <item
+            android:id="@+id/nav_visualizza_dati"
+            android:icon="@drawable/view_data"
+            android:title="@string/menu_visualizza_dati" />
+        <item
+            android:id="@+id/nav_filtra_dati"
+            android:icon="@drawable/filter"
+            android:title="@string/menu_filtra" />
+    </group>
+</menu>

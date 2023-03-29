@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_carica_dati">
+
+    <fragment
+        android:id="@+id/nav_visualizza_dati"
+        android:name="dev.antoniogrillo.prenotazioneposti.ui.VisualizzaDatiFragment"
+        android:label="@string/fragment_visualizza_dati"
+        tools:layout="@layout/fragment_visualizza_dati">
+        <argument
+            android:name="request"
+            app:argType="dev.antoniogrillo.prenotazioneposti.model.PrenotazioneRequest"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_filtra_dati"
+        android:name="dev.antoniogrillo.prenotazioneposti.ui.FiltraDatiFragment"
+        android:label="@string/fragment_filtra_dati"
+        tools:layout="@layout/fragment_filtra_dati">
+        <action
+            android:id="@+id/filtra_dati"
+            app:destination="@id/nav_visualizza_dati" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_filtra_per_persona"
+        android:name="dev.antoniogrillo.prenotazioneposti.ui.FiltraPerPersonaFragment"
+        android:label="@string/fragment_filtra_persona"
+        tools:layout="@layout/fragment_filtra_per_persona" />
+    <fragment
+        android:id="@+id/nav_inserisci_token"
+        android:name="dev.antoniogrillo.prenotazioneposti.ui.InserisciTokenFragment"
+        android:label="@string/fragment_inserisci_token"
+        tools:layout="@layout/fragment_inserisci_token">
+        <action
+            android:id="@+id/carica_dati"
+            app:destination="@id/nav_carica_dati" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_carica_dati"
+        android:name="dev.antoniogrillo.prenotazioneposti.ui.CaricaDatiFragment"
+        android:label="@string/fragment_carica_dati"
+        tools:layout="@layout/fragment_carica_dati">
+        <action
+            android:id="@+id/visualizza_dati"
+            app:destination="@id/nav_visualizza_dati" />
+        <action
+            android:id="@+id/inserisci_token"
+            app:destination="@id/nav_inserisci_token" />
+    </fragment>
+</navigation>
